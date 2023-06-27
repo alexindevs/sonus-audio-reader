@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Sonus Audio Reader",
+  "version": "1.0",
+  "description": "Sonus Audio Reader is a handy text-to-speech extension that allows you to convert web page content into audio.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "tts"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/sonus-icon.png",
+    "48": "images/sonus-icon.png",
+    "128": "images/sonus-icon.png"
+  }
+}
