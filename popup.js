@@ -11,15 +11,15 @@
     setTimeout(addGoneClass, 10000);
     var statusText = document.getElementById("status");
 
+    var scrapedText;
     function startScrape() {
       startButton.style.backgroundColor = "#040354"
       statusText.textContent = 'Scraping in progress...';
     
       
-      var scrapedText = null; 
-chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   chrome.tabs.sendMessage(tabs[0].id, { action: 'startCapture' }, response => {
-    scrapedText = response && response.scrapedText ? response.scrapedText : null;
+    scrapedText = response && response.scrapedText ? response.scrapedText : null;;
 
     if (scrapedText) {
       // Send the scraped text to the background script
@@ -35,6 +35,5 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   });
 });
 
-      "I'm trying to build an extension, and it's purpose requires me to scrape the text of the current tab, and store in a variable. Now, I'm trying to check if that worked the way it should, by console logging the value of the variable. But it's not working in the extensions devtools, AND in the website's devtools. Here is the code snippet from the frontend script (controlling the UI as the process goes on). "
 }
     startButton.addEventListener("click", startScrape);
