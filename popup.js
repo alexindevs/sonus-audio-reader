@@ -13,13 +13,13 @@
 
     var scrapedText;
     function startScrape() {
-      startButton.style.backgroundColor = "#040354"
+      startButton.style.backgroundColor = "#040354";
       statusText.textContent = 'Scraping in progress...';
     
       
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   chrome.tabs.sendMessage(tabs[0].id, { action: 'startCapture' }, response => {
-    scrapedText = response && response.scrapedText ? response.scrapedText : null;;
+    scrapedText = response && response.scrapedText ? response.scrapedText : null;
 
     if (scrapedText) {
       // Send the scraped text to the background script

@@ -7,11 +7,11 @@
 }
 
 body {
-font-family: 'Raleway';
-width: 300px;
+  font-family: 'Raleway';
+  width: 300px;
   height: 400px;
+  /* background-color: grey; */
 }
-
 
 @keyframes expand {
     0% {
@@ -41,9 +41,9 @@ width: 300px;
   .preloader .text {
     color: white;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -100%);
     opacity: 0;
     display: flex;
     column-gap: 20px;
@@ -70,6 +70,9 @@ width: 300px;
 
   }
 
+  .preloader .text div:last-child{
+    margin-top: 10px;
+  }
   @keyframes slide-in {
     0% {
       display: none;
@@ -153,10 +156,16 @@ width: 300px;
     border: none;
     color: white;
     display: none;
-    border-radius: 20px;
+    border-radius: 15px;
     z-index: 4;
+    transition: .3s ease;
   }
   
 #start:hover {
   background-color: #040354;
+}
+
+
+#status{
+  font-size: 18px;
 }
