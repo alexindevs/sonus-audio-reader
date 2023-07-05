@@ -37,3 +37,11 @@
 
 }
     startButton.addEventListener("click", startScrape);
+
+    document.addEventListener("click", displayFunc);
+    
+    function displayFunc(){
+        startButton.style.display = "none";
+    };
+
+    setTimeout(displayFunc, 5000);
