@@ -13,7 +13,7 @@
 
     var scrapedText;
     function startScrape() {
-      startButton.style.backgroundColor = "#040354";
+       startButton.style.backgroundColor = "#040354";
       statusText.textContent = 'Scraping in progress...';
     
       
@@ -38,10 +38,12 @@
 }
     startButton.addEventListener("click", startScrape);
 
-    document.addEventListener("click", displayFunc);
-    
+    startButton.addEventListener("click", displayFunc);
+
+    var cont = document.getElementById('container');
+    cont.style.display = "none";
+
     function displayFunc(){
         startButton.style.display = "none";
-    };
-
-    setTimeout(displayFunc, 5000);
+          cont.style.display = "block";
+      };
