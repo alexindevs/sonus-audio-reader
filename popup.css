@@ -206,4 +206,6 @@ body {
 
 #status{
   font-size: 18px;
+  display: block;
+  margin: auto;
 }
