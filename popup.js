@@ -38,22 +38,3 @@ function startScrape() {
 }
 startButton.addEventListener("click", startScrape);
 
-
-
-var cont = document.getElementById('container');
-cont.style.display = "none";
-
-function displayFunc() {
-  startButton.style.display = "none";
-  cont.style.display = "block";
-};
-
-startButton.addEventListener("click", displayFunc);
-
-// function hideFunc() {
-//   startButton.style.display = "block";
-//   cont.style.display = "none";
-// };
-// setTimeout(hideFunc, 2000);
-
-// document.querySelector("body").addEventListener("click", hideFunc);
