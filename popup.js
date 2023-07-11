@@ -38,3 +38,13 @@ function startScrape() {
 }
 startButton.addEventListener("click", startScrape);
 
+startButton.addEventListener("click", notice);
+var toast = document.getElementById("container");
+
+function notice() {
+  toast.style.visibility = "visible";
+}
+
+setTimeout(() => {
+  toast.remove();
+}, 3000);
