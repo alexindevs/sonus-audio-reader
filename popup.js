@@ -38,8 +38,7 @@ function startScrape() {
 }
 startButton.addEventListener("click", startScrape);
 
-
-
+startButton.addEventListener("click", notice);
 
 function notice() {
   let toast = document.querySelector(".container");
