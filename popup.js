@@ -13,7 +13,7 @@ var statusText = document.getElementById("status");
 
 var scrapedText;
 function startScrape() {
-  startButton.style.backgroundColor = "#040354";
+  // startButton.style.backgroundColor = "";
   statusText.textContent = 'Scraping in progress...';
 
 
@@ -38,13 +38,16 @@ function startScrape() {
 }
 startButton.addEventListener("click", startScrape);
 
-startButton.addEventListener("click", notice);
-var toast = document.getElementById("container");
+
+
 
 function notice() {
-  toast.style.visibility = "visible";
+  let toast = document.querySelector(".container");
+
+  toast.style.display = "flex";
+  
+  setTimeout(() =>{
+    toast.style.display = "none";
+  }, 3000);
 }
 
-setTimeout(() => {
-  toast.remove();
-}, 3000);
