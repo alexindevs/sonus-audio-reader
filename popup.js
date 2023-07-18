@@ -23,17 +23,25 @@
 
     if (scrapedText) {
       // Send the scraped text to the background script
-      chrome.runtime.sendMessage({ action: 'convertToAudio', text: 'Hello, world!' }, response => {
-        if (response.audioBlob && Object.keys(response.audioBlob).length > 0) {
-          const audioBlob = response.audioBlob;
-          const audio = new Audio();
-          audio.src = window.URL.createObjectURL(audioBlob);
-          audio.play();
-        } else if (response.error) {
-          const error = response.error;
-          console.error(error);
-        } else {
-          console.error("Something else is wrong.");
+      chrome.runtime.sendMessage({ action: 'convertToAudio', text: scrapedText }, response => {
+        if (response.success) {
+          chrome.storage.local.get('audioData', data => {
+            const audioData = data.audioData;
+      
+            if (audioData) {
+              // Create a new Audio element and set its source to the audio data
+              const audio = new Audio();
+              audio.src = audioData;
+      
+              // Play the audio
+              audio.play();
+      
+              // Inform the background script that the audio is playing
+              sendResponse({ success: true });
+            } else {
+              console.error(response.error);
+            }
+          });      
         }
       });
       // Update UI to indicate scraping is done
