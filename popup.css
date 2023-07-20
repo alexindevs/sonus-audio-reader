@@ -146,7 +146,7 @@ body {
     }
   }
 
-  #start {
+  /* #start {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -164,7 +164,7 @@ body {
 
   #start:hover {
     background-color: #040354;
-  }
+  } */
 
   .container{
     display: none;
@@ -200,13 +200,43 @@ body {
       width: 100%;
     }
   }
-  
-#start:hover {
-  background-color: #040354;
-}
 
 
 #status{
   font-size: 16px;
   margin-left: 15px;
+}
+main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 20px;
+}
+
+.option{
+  width: 90%;
+  height: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 1fr 1fr;
+  gap: 10px;
+}
+
+.option button{
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  transition: .3s ease;
+}
+
+.option button svg{
+  height: 50px;
+  fill: #0400f1;
+}
+
+.option button:hover {
+  background-color: #040354;
 }
