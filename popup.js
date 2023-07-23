@@ -1,22 +1,22 @@
 // document.addEventListener('DOMContentLoaded', function() {
-  
-    var preloader = document.querySelector('#opening');
-    var startButton = document.querySelector("#start")
- 
-    function addGoneClass() {
-      preloader.classList.add('gone');
-      startButton.style.display = "block";
-    }
-  
-    setTimeout(addGoneClass, 10000);
-    var statusText = document.getElementById("status");
 
-    var scrapedText;
-    function startScrape() {
-      startButton.style.backgroundColor = "#040354"
-      statusText.textContent = 'Scraping in progress...';
-    
-      
+var preloader = document.querySelector('#opening');
+var startButton = document.querySelector("#start")
+
+function addGoneClass() {
+  preloader.classList.add('gone');
+  startButton.style.display = "block";
+}
+
+setTimeout(addGoneClass, 10000);
+var statusText = document.getElementById("status");
+
+var scrapedText;
+function startScrape() {
+  // startButton.style.backgroundColor = "";
+  statusText.textContent = 'Scraping in progress...';
+
+
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   chrome.tabs.sendMessage(tabs[0].id, { action: 'startCapture' }, response => {
     scrapedText = response && response.scrapedText ? response.scrapedText : null;;
@@ -50,8 +50,21 @@
     } else {
       statusText.textContent = 'No text found on the page';
     }
+    main
   });
-});
 
 }
-    startButton.addEventListener("click", startScrape);
+startButton.addEventListener("click", startScrape);
+
+startButton.addEventListener("click", notice);
+
+function notice() {
+  let toast = document.querySelector(".container");
+
+  toast.style.display = "flex";
+  
+  setTimeout(() =>{
+    toast.style.display = "none";
+  }, 3000);
+}
+
