@@ -50,10 +50,9 @@ function startScrape() {
     } else {
       statusText.textContent = 'No text found on the page';
     }
-    main
   });
-
-}
+  }
+)}
 startButton.addEventListener("click", startScrape);
 
 startButton.addEventListener("click", notice);
