@@ -10,6 +10,8 @@ I came up with this one day as I was reading a blog post a friend of mine wrote.
 - Play back audio in real-time or save it as a downloadable file
 - Seamless integration with Chrome
 
+##### NB: This project is unfinished. Please do not install.
+
 ## Installation
 
 1. Clone or download the repository.
