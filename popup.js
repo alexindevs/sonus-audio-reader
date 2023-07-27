@@ -31,12 +31,13 @@ function startScrape() {
       scrapedText = response && response.scrapedText ? response.scrapedText : null;
 
       if (scrapedText) {
+        scrapedText = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum provident sed repudiandae praesentium et minus sunt nulla in ipsum dignissimos totam tempore natus, at dolor. Distinctio sed eius iste assumenda sint beatae a eum, tenetur velit, accusamus nulla vitae, minima fugit odit nemo expedita. Voluptate atque ipsam, cumque dolorum, sed laborum debitis, incidunt neque quaerat hic recusandae rerum odit! Exercitationem labore error maxime molestias, omnis dolor eius, deleniti cum unde nisi numquam! Voluptatum provident impedit dolorem praesentium, animi placeat consequatur quod voluptatem ducimus. Deserunt nesciunt expedita nostrum veniam odio voluptates.";
         var sizeInBytes = new Blob([scrapedText]).size;
         var sizeInKb = sizeInBytes / 1024;
 
         // If the size exceeds 100KB, truncate the text
         if (sizeInKb > 100) {
-          scrapedText = scrapedText.substring(0, 100 * 1024);
+          scrapedText = scrapedText.substring(0, 90 * 1024);
         }
 
         // Convert the scrapedText Blob to a string

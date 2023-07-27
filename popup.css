@@ -244,6 +244,7 @@ main{
   grid-template-columns: 1fr 1fr;
   grid-row: 1fr 1fr;
   gap: 10px;
+  display: none;
 }
 
 .option button{
