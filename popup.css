@@ -28,7 +28,7 @@ body {
     height: 0;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 900000;
     background-color: #0400f1;
     width: 100%;
     animation-name: expand;
@@ -146,7 +146,7 @@ body {
     }
   }
 
-  /* #start {
+  #start {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -162,11 +162,33 @@ body {
     transition: .3s ease;
   }
 
+  #status:not(.notice) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+    color: black;
+    display: none;
+    z-index: 1500;
+  }
+
   #start:hover {
     background-color: #040354;
-  } */
+  }
 
-  .container{
+  .start {
+    position: absolute;
+    background-color: white;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    left: 0;
+    z-index: 1700;
+  }
+
+  .notice{
     display: none;
     position: absolute;
     top: 10px;
@@ -180,7 +202,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
   }
 
-  .container::after{
+  .notice::after{
     content: '';
     position: absolute;
     display: block;
